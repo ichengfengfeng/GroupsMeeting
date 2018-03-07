@@ -1,0 +1,89 @@
+package com.icss.meeting.biz;
+
+import java.util.Date;
+import java.util.List;
+
+import com.icss.meeting.dao.RoomDao;
+import com.icss.meeting.dao.UserDao;
+import com.icss.meeting.dto.RoomDto;
+import com.icss.meeting.entity.TMeeting;
+import com.icss.meeting.entity.Tuser;
+
+public class UserBiz {
+	/**
+	 * 用户登录
+	 * @param uname
+	 * @param pwd
+	 * @return
+	 */
+	public Tuser login(String uname, String pwd)throws Exception{
+		Tuser  user = null;
+		if(uname != null && pwd != null){
+			UserDao udao = new UserDao();
+			try {
+				user = udao.login(uname, pwd);
+			} catch (Exception e) {
+				throw e;
+			}finally{
+				udao.closeConnection();
+			}
+		}else{
+			throw new Exception("输入参数为空！");
+		}
+		return user;
+	}
+	
+	/**
+	 * 获得可以预订的会议室
+	 * @return
+	 * @throws Exception
+	 */
+	public  List<RoomDto> getroom(Date begintime,Date endtime,String rtype)throws Exception{
+		List<RoomDto> rooms = null;
+		if(begintime != null && endtime != null){
+			RoomDao rdao = new RoomDao();
+			try {
+				rooms =rdao.getroom(begintime, endtime,rtype);
+				
+			} catch (Exception e) {
+				throw e;
+			}finally{
+				rdao.closeConnection();
+			}
+		}else{
+			throw new Exception("参数错误");
+		}
+		
+		return rooms;
+	}
+	/**
+	 * 获得会议室预订情况
+	 * @param roomno
+	 * @return
+	 * @throws Exception
+	 */
+	public List<TMeeting> getMeeting(String date,String roomno)throws Exception{
+		List<TMeeting> meetings = null;
+		if(date != null && roomno != null){
+			RoomDao rdao = new RoomDao();
+			try {
+				meetings = rdao.getMeeting(date, roomno);
+			} catch (Exception e) {
+				throw e;
+			}finally{
+				rdao.closeConnection();
+			}
+		}else{
+			throw new Exception("参数错误");
+		}
+		
+		return meetings;
+	}
+	
+	
+	public static void main(String[] args) {
+		String s = "111112ws";
+		System.out.println(s.getBytes());
+	}
+
+}

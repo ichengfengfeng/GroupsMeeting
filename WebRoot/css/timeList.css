@@ -1,0 +1,45 @@
+
+.table_list th{
+				background-color: rgb(210,210,210);
+				color: #333;
+				font-weight: 100;
+				border: 1px solid rgb(185,185,185);
+				height: 30px;
+			}
+			.table_list td{
+				border: 1px solid rgb(185,185,185);
+				text-align:center;
+				color: #333;
+				font-weight: 100;
+			}
+			.time_list{
+				border: 1px rgb(185,185,185) solid;
+				height: 20px;
+				margin: 5px 0;
+				border-radius: 8px;
+			}
+			.time_list div{
+				float: left;
+				width: 8.5px;
+				height: 10px;
+				border-right: 1px rgb(185,185,185) solid;
+				margin: 5px 0;
+			}
+			.book_btn{
+				border: none;
+				color: #fff;
+				background-color: rgb(98,64,26);
+				width: 50px;
+				height: 25px;
+				display: block;
+				margin: 0 auto;
+			}
+			.last_line{
+				border-right: none !important;
+			}
+			.check{
+				background-color:#B22222;
+			}
+			.check1{
+				background-color: blueviolet;
+			}

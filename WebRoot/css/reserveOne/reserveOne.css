@@ -1,0 +1,65 @@
+.table_list{
+				width: 740px;
+				border: 1px solid rgb(185,185,185);
+				border-collapse: collapse;
+				font-size: 12px;
+				
+			}
+.scroll{
+				width: 760px;
+				height: 400px;
+				overflow: auto;
+			}
+			.search_form .item,.serch_list .item{
+				margin: 0px 20px;
+				padding: 10px 0px;
+			}
+			.pre_btn,.next_btn{
+				border: none;
+				color: #fff;
+				background-color: rgb(98,64,26);
+				width: 80px;
+				height: 25px;
+				display: inline-block;
+			}
+			.next_btn{
+				margin-left: 20px;
+			}
+			.btn_group{
+				width: 200px;
+				margin: 10px auto;
+			}
+			.meet_img{
+				width: 300px;
+				height: 200px;
+			}
+			.meet_img img{
+				margin: 20px 20px;
+			}
+			.meet_show{
+				margin: 15px 10px;
+			}
+			h4{
+				line-height: 25px;
+			}
+			.person_num{
+				line-height: 25px;
+			}
+			.device{
+				font-size: 10px;
+				line-height: 18px;
+				font-weight: bold;
+			}
+			.notic{
+				font-size: 12px;
+			}
+			.notic p{
+				margin: 3px 0;
+			}
+			.notic p img{
+				position: relative;
+				top:3px;
+			}
+			.reserve_time span{
+				cursor: pointer;
+			}

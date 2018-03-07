@@ -1,0 +1,36 @@
+package com.icss.meeting.dao;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.icss.meeting.entity.Tuser;
+
+public class UserDao extends BaseDao{
+	/**
+	 * ÓÃ»§µÇÂ¼
+	 * @param uname
+	 * @param pwd
+	 * @return
+	 */
+	public Tuser login(String uname, String pwd)throws Exception{
+		String sql = "select empno,pwd,role from tuser where empno=? and pwd=?";
+		Tuser user = null;
+		this.openConnection(this.DB_URL);
+		PreparedStatement ps = this.conn.prepareStatement(sql);
+		ps.setString(1, uname);
+		ps.setString(2, pwd);
+	    ResultSet rs = ps.executeQuery();
+	    while(rs.next()){
+	    	user = new Tuser();
+	    	user.setUname(rs.getString("empno"));
+	    	user.setPwd(rs.getString("pwd"));
+	    	user.setRole(rs.getInt("role"));
+	    }
+		return user;
+	}
+	
+	
+	
+	
+	
+}

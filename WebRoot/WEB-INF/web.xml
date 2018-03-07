@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>
+  <filter>
+   <filter-name>LoginFilter</filter-name>
+   <filter-class>com.icss.meeting.filter.LoginFilter</filter-class>
+  </filter>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.LoginSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MainSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.MainSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RoomInfoSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.RoomInfoSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddRoomSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.AddRoomSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SetRoomStateSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.SetRoomStateSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EmployeeListSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.EmployeeListSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddEmpSessionSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.AddEmpSessionSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>JoinEmpListSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.JoinEmpListSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RemoveEmpSessionSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.RemoveEmpSessionSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CancleReserveSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.CancleReserveSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ReserveRoomSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.ReserveRoomSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PersonalMeetingSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.PersonalMeetingSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EmpInfoSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.EmpInfoSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeptMeetingSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.DeptMeetingSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LogoutSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.LogoutSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DownLoadSvl</servlet-name>
+    <servlet-class>com.icss.meeting.control.DownLoadSvl</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+<filter-mapping>
+<filter-name>LoginFilter</filter-name>
+<url-pattern>/user/*</url-pattern>
+</filter-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>LoginSvl</servlet-name>
+    <url-pattern>/login.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>MainSvl</servlet-name>
+    <url-pattern>/user/MainSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RoomInfoSvl</servlet-name>
+    <url-pattern>/user/RoomInfoSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddRoomSvl</servlet-name>
+    <url-pattern>/back/AddRoomSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SetRoomStateSvl</servlet-name>
+    <url-pattern>/back/SetRoomStateSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EmployeeListSvl</servlet-name>
+    <url-pattern>/user/EmployeeListSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddEmpSessionSvl</servlet-name>
+    <url-pattern>/user/AddEmpSessionSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JoinEmpListSvl</servlet-name>
+    <url-pattern>/user/JoinEmpListSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RemoveEmpSessionSvl</servlet-name>
+    <url-pattern>/user/RemoveEmpSessionSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CancleReserveSvl</servlet-name>
+    <url-pattern>/user/CancleReserveSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ReserveRoomSvl</servlet-name>
+    <url-pattern>/user/ReserveRoomSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PersonalMeetingSvl</servlet-name>
+    <url-pattern>/user/PersonalMeetingSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EmpInfoSvl</servlet-name>
+    <url-pattern>/user/EmpInfoSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeptMeetingSvl</servlet-name>
+    <url-pattern>/user/DeptMeetingSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutSvl</servlet-name>
+    <url-pattern>/user/LogoutSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownLoadSvl</servlet-name>
+    <url-pattern>/user/DownLoadSvl</url-pattern>
+  </servlet-mapping>	
+  
+   <servlet>
+    <servlet-name>CoreDispatcherServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/spring-mvc.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>   
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>CoreDispatcherServlet</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <resource-ref>
+		<res-ref-name>jdbc/OracleMeeting</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+  </resource-ref>
+ 
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

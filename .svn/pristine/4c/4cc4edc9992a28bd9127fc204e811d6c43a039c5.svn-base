@@ -1,0 +1,33 @@
+package com.icss.meeting.entity;
+
+public class TRoom {
+
+	private String roomno;
+	private String rname;
+	private String tno;
+	private int state;
+	public String getRoomno() {
+		return roomno;
+	}
+	public void setRoomno(String roomno) {
+		this.roomno = roomno;
+	}
+	public String getRname() {
+		return rname;
+	}
+	public void setRname(String rname) {
+		this.rname = rname;
+	}
+	public String getTno() {
+		return tno;
+	}
+	public void setTno(String tno) {
+		this.tno = tno;
+	}
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
+	}
+}

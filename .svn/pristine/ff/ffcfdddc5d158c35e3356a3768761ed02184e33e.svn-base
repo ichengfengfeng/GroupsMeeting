@@ -1,0 +1,53 @@
+<%@ page language="java" import="java.util.*" pageEncoding="gbk"%>
+<%@taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>xx会议室</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+
+  </head>
+  
+  <body>
+   <form action="<%=basePath%>user/MainSvl" method = "post">
+   <table>
+     <tr><td>时间:</td><td><input type="radio" name="date" id ="today" value="today" checked>今天 </td><td><input type = "radio" name = "date" id = "tomorrow" value = "tomorrow">明天</td> </tr>
+      <tr> <td>规格：</td><td><input type="radio" name="rtype"  value="10">6-10人</td><td><input type="radio" name="rtype"  value="20">10-20人</td><td><input type="radio" name="rtype"  value="30">20-30人</td></tr>
+    <tr> <td>时间段：</td><td><input type ="text" name="begintime" id="begintime" />至</td><td><input type ="text" name="endtime" id="endtime" /></td></tr>     
+     <tr><td> <input type = "submit" id = "tijiao" value = "搜索" ></td></tr>
+   </table>
+   
+   
+   
+   </form>
+   
+   <table border = "1" style='border-collapse: collapse' width="500px">
+   <tr><td rowspan = "2">会议室</td><td rowspan ="2">规格</td><td colspan = "600">预定情况</td></tr>
+   <tr><td colspan = "120">8:00-10:00</td><td colspan = "120">10:00-12:00</td><td colspan = 120>12:00-14:00</td><td colspan = "120">14:00-16:00</td><td colspan = "120">16:00-18:00</td><td></td></tr>
+   <c:forEach var = "room" items= "${rooms}">
+   <tr>
+   <td>${room.roomno}</td><td>${room.roomsize}人间</td><c:forEach var= "td" items="${room.td}">${td}</c:forEach> <td><a href = "<%=basePath%>user/RoomInfoSvl?roomno=${room.roomno}">预订</a></td>
+   </tr>
+   </c:forEach>
+   
+   
+   
+   </table>
+  
+  </body>
+</html>

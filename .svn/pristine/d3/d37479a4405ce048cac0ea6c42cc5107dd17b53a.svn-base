@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+  <Resource name="jdbc/OracleMeeting" auth="Container"  type="javax.sql.DataSource" 
+            username="meet3"  password="123456"   driverClassName="oracle.jdbc.driver.OracleDriver"
+            url="jdbc:oracle:thin:@10.0.19.252:1521:orcl"         
+            maxActive="50" maxIdle="20" maxWait="10000"/>
+</Context>
+

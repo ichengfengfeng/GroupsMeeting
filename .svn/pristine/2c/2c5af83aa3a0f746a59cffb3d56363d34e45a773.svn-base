@@ -1,0 +1,71 @@
+<%@ page language="java" import="java.util.*" pageEncoding="gbk"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>用户登录</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+	<script type="text/javascript" src="js/jquery-1.6.min.js"></script>
+	<script type="text/javascript">
+	function send(){
+	   var uname = document.getElementById("uname").value;
+	   var pwd = document.getElementById("password").value;
+	   if(uname == null || uname == ""){
+	   var unamespan = document.getElementById("unamespan");
+	   unamespan.innerHTML = "用户名不能为空 ";
+	   return false;
+	   }
+	   if(pwd == null || pwd == ""){
+	   var pwdspan = document.getElementById("pwdspan");
+	   pwdspan.innerHTML = "密码不能为空";
+	   return false;
+	   }
+	   
+	   if($("#verifyCode").val()==""){
+	   	 verifyspan.innerHTML = "校验码不能为空";
+	   	 return false;
+	   }
+	   
+	   $.post("login.do",{uname:$("#uname").val(),password:$("#password").val(),verifyCode:$("#verifyCode").val()},
+	   		function callback(data){
+	   			if(data.toString()=="ok"){
+	   			window.location="<%=basePath%>error.jsp";
+	   			}else{
+	   			$("#enter").attr("disabled",false);
+	   			verifyFunc();
+	   			$("#message").html("<font face=Arial size=3 color=#ff9900 >"+data+"</font>");
+	             alert(data);
+	   			}
+	   });
+	}
+	function verifyFunc(){
+		$("#verifyCode").val("");
+		$("#verifyImage").attr("src","<%=basePath%>createMa.jsp?temp="+new Date());
+	}
+	</script>
+  </head>
+  <body>  
+    <table align="center">  
+		<tr height="200px"></tr>
+  		<tr><td>用户名:</td><td><input type="text" name = "uname" id="uname" /><span  style="color:red" id="unamespan"></span></td></tr>
+  		<tr><td>密码:</td><td><input type="password" name = "password" id="password" /><span style="color:red" id="pwdspan"></span></td></tr>
+  		<tr><td>校验码:</td><td><input type="text" id="verifyCode" /><img id=verifyImage name=idenimage alt="点击下一个" src="createMa.jsp" onclick="verifyFunc();" ></img><span style="color:red" id="verifyspan"></span></td></tr>
+  		<tr><td colspan="2"><input type="button" id="enter" onclick="send()" value="登录" /></td></tr>
+  		<tr><td colspan = "2"><span style="color: red">${msg}</span></td></tr>
+    </table>    
+  </body>
+</html>

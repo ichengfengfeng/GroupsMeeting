@@ -1,0 +1,61 @@
+package com.icss.meeting.dto;
+
+import java.util.List;
+
+import com.icss.meeting.entity.TDevice;
+
+public class RoomDto {
+	private String roomno;
+	private String rooname;
+	private String tno;
+	private int state;
+	private int roomsize;
+	private List<TDevice> devices;
+	private List<String> td;
+	
+	public List<TDevice> getDevices() {
+		return devices;
+	}
+	public void setDevices(List<TDevice> devices) {
+		this.devices = devices;
+	}
+	public List<String> getTd() {
+		return td;
+	}
+	public void setTd(List<String> td) {
+		this.td = td;
+	}
+	public String getRoomno() {
+		return roomno;
+	}
+	public void setRoomno(String roomno) {
+		this.roomno = roomno;
+	}
+	public String getRooname() {
+		return rooname;
+	}
+	public void setRooname(String rooname) {
+		this.rooname = rooname;
+	}
+	public String getTno() {
+		return tno;
+	}
+	public void setTno(String tno) {
+		this.tno = tno;
+	}
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
+	}
+	public int getRoomsize() {
+		return roomsize;
+	}
+	public void setRoomsize(int roomsize) {
+		this.roomsize = roomsize;
+	}
+	
+	
+
+}

@@ -1,0 +1,46 @@
+package com.icss.meeting.biz;
+
+import com.icss.meeting.dao.RoomDao;
+import com.icss.meeting.entity.TRoom;
+
+public class RoomBiz {
+	/**
+	 * 修改会议室状态
+	 * @param roomno
+	 * @param state
+	 * @throws Exception
+	 */
+	public void setRoomState(String roomno,String state) throws Exception{
+		if(roomno!=null&&roomno.equals("")&&state!=null&&state.equals("")){
+			RoomDao dao = new RoomDao();
+			try {
+				dao.setRoomState(roomno, state);
+			} catch (Exception e) {
+				throw e;
+			} finally{
+				dao.closeConnection();
+			}
+		}else{
+			throw new Exception("输入参数为空！");
+		}
+	}
+	/**
+	 * 添加会议室
+	 * @param room
+	 * @throws Exception
+	 */
+	public void addRoom(TRoom room) throws Exception{
+		if(room!=null){
+			RoomDao dao = new RoomDao();
+			try {
+				dao.addRoom(room);
+			} catch (Exception e) {
+				throw e;
+			}finally{
+				dao.closeConnection();
+			}
+		}else{
+			throw new Exception("输入参数为空！");
+		}
+	}
+}

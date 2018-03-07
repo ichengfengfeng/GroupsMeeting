@@ -1,0 +1,41 @@
+package com.icss.meeting.dao;
+
+import java.sql.PreparedStatement;
+
+import com.icss.meeting.entity.TRoom;
+
+public class RoomDao extends BaseDao{
+	
+	/**
+	 * 修改会议室状态
+	 * @param roomno
+	 * @param state
+	 * @throws Exception
+	 */
+	public void setRoomState(String roomno,String state) throws Exception{
+		String sql = "update troom set state = ? where roomno = ?";
+		int newState = Integer.parseInt(state);
+		this.openConnection(DB_URL);
+		PreparedStatement ps = this.conn.prepareStatement(sql);
+		ps.setInt(1, newState);
+		ps.setString(2, roomno);
+		ps.executeUpdate();
+		ps.close();
+	}
+	/**
+	 * 添加会议室
+	 * @param room
+	 * @throws Exception
+	 */
+	public void addRoom(TRoom room) throws Exception{
+		String sql = "insert into troom values(?,?,?,?)";
+		this.openConnection(DB_URL);
+		PreparedStatement ps = this.conn.prepareStatement(sql);
+		ps.setString(1, room.getRoomno());
+		ps.setString(2, room.getRname());
+		ps.setString(3, room.getTno());
+		ps.setInt(4, room.getState());
+		ps.executeUpdate();
+		ps.close();
+	}
+}

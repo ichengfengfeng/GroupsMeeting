@@ -1,0 +1,91 @@
+.min_width{
+				min-width: 1000px;
+			}
+			.content{
+				width: 1000px;
+				height: 1000px;
+				margin: 0 auto;
+				background: url(../img/background.png) top left;
+			}
+			header{
+				width:850px;
+				height: 120px;
+				margin: 0 auto;
+			}
+			header div{
+				display: inline-block;
+			}
+			.logo{
+				margin:25px 0;
+			}
+			.title h1{
+				color: #fff;
+				position: relative;
+				top:-20px;
+				left:80px;
+				font-size: 40px;				
+			}
+			.headjsp{
+				position: relative;
+				font-size:small;
+				float:right;
+				width:150px;
+				height:40px;
+				margin-top:40px;
+			}
+			.login{
+				width: 1px;
+				height: 25px;
+				font-size: 12px;
+				color: #fff;
+				border-radius: 5px;
+				background-color: rgb(93,91,92);
+				text-align: center;
+				line-height: 25px;
+				position: relative;
+				left:400px;
+				top:-100px;
+			}
+			.line{
+				border-right: 1px solid #FFFFFF;
+				height: 10px;
+				margin: 0px 3px;
+				display: inline-block;
+			}
+			.cursor{
+				cursor: pointer;
+			}
+			.tip_line{
+				display: inline-block;
+				height: 16px;
+				border-left:2px solid rgb(99,64,22);
+				position: relative;
+				top:2px;
+			}
+			.search_form{
+				height: 100px;
+				width: 850px;
+				background-color: #fff;
+				margin: 0 auto;
+			}
+			
+			.serch_list{
+				height: 650px;
+				width: 850px;
+				background-color: #fff;
+				margin: 30px auto;
+			}
+			.ipt{
+				display: inline-block;
+			}
+			.ipt input{
+				width: 100px;
+				height: 21px;
+			}
+			.tip_date,.form_item{
+				font-size: 12px;
+			}
+			.check_span{
+				color:#B22222;
+			}
+			

@@ -1,0 +1,9 @@
+select  roomno  from troom  where roomno not in( 
+  select  r.roomno  from troom r left  join tmeeting m  on  r.roomno = m.roomno where
+   begintime <= to_date('20171024 08:00:00','yyyymmdd hh24:mi:ss') and  endtime >=to_date('20171024 09:00:00','yyyymmdd hh24:mi:ss')
+   or( endtime >= to_date('20171024 08:00:00','yyyymmdd hh24:mi:ss') and endtime <= to_date('20171024 09:00:00','yyyymmdd hh24:mi:ss')  )
+    or   ( begintime >= to_date('20171024 08:00:00','yyyymmdd hh24:mi:ss')  and  begintime <= to_date('20171024 09:00:00','yyyymmdd hh24:mi:ss') )
+  )
+      
+
+       select roomno, Begintime,endtime from tmeeting where roomno = 'R001'

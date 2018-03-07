@@ -1,0 +1,30 @@
+package com.icss.meeting.biz;
+
+import com.icss.meeting.dao.UserDao;
+import com.icss.meeting.entity.Tuser;
+
+public class UserBiz {
+	/**
+	 * 用户登录
+	 * @param uname
+	 * @param pwd
+	 * @return
+	 */
+	public Tuser login(String uname, String pwd)throws Exception{
+		Tuser  user = null;
+		if(uname != null && pwd != null){
+			UserDao udao = new UserDao();
+			try {
+				user = udao.login(uname, pwd);
+			} catch (Exception e) {
+				throw e;
+			}finally{
+				udao.closeConnection();
+			}
+		}else{
+			throw new Exception("输入参数为空！");
+		}
+		return user;
+	}
+
+}
